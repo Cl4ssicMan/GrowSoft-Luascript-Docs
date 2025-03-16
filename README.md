@@ -21,7 +21,7 @@ To create a custom command, define a command data table with the following field
 
 ```lua
 Example:
-local buyCommandData = {
+local nameCommandData = {
     command = "commandName", <-- This is the command that players will type in the game as in /commandName
     roleRequired = Roles.ROLE_NONE, <--- These roles are defined in the game's API as ROLE_NONE = 0, ROLE_VIP = 1, ROLE_SUPER_VIP = 2, ROLE_MODERATOR = 3, ROLE_ADMIN = 4, ROLE_COMMUNITY_MANAGER = 5, ROLE_CREATOR = 6, ROLE_GOD = 7, ROLE_DEVELOPER = 51
     description = "Description of the command" <-- This is the description that will be displayed on usage.
@@ -46,8 +46,8 @@ Use `onPlayerCommandCallback` to handle player commands.
 ```lua
 Example:
 onPlayerCommandCallback(function(world, player, fullCommand) <-- This is the function that will be called when the command is used.
-    local command, message = fullCommand:match("^(%S+)%s*(.*)") <-- This is used to extract the command and message from the full command.
-    if command == buyCommandData.command then <-- This checks if the command matches the registered command.
+    local command = fullCommand:match("^(%S+)%s*(.*)") <-- This is used to extract the command from the full command.
+    if command == nameCommandData.command then <-- This checks if the command matches the registered command.
         oncommandNameMenu(player, message) <-- This is the function that will be called when the command is used.
         return true
     end
@@ -63,9 +63,9 @@ Use `onPlayerDialogCallback` to handle player interactions with dialogs.
 ```lua
 Example:
 onPlayerDialogCallback(function(world, player, data) <-- This is the function that will be called when a dialog is called.
-    if data["dialog_name"] == "buy" then <-- This checks if the dialog name matches the expected dialog.
+    if data["dialog_name"] == "name" then <-- This checks if the dialog name matches the expected dialog.
         if not data["buttonClicked"] then return true end <-- This checks if a button was clicked in the dialog.
-        if startsWith(data["buttonClicked"], "searchableItemListButton_") then <-- This checks if a specific button was clicked in the dialog.
+        if startsWith(data["buttonClicked"], "name") then <-- This checks if a specific button was clicked in the dialog.
             -- Handle item selection and purchase logic here
         end
         return true

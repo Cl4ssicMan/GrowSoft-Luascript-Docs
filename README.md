@@ -17,12 +17,12 @@ To create a custom command, define a command data table with the following field
 - `roleRequired`: The role required to use the command.
 - `description`: A description of the command.
 
-```Example:
+``Example:
 local buyCommandData = {
     command = "commandName", <-- This is the command that players will type in the game as in /commandName
     roleRequired = Roles.ROLE_NONE, <--- These roles are defined in the game's API as ROLE_NONE = 0, ROLE_VIP = 1, ROLE_SUPER_VIP = 2, ROLE_MODERATOR = 3, ROLE_ADMIN = 4, ROLE_COMMUNITY_MANAGER = 5, ROLE_CREATOR = 6, ROLE_GOD = 7, ROLE_DEVELOPER = 51
     description = "Description of the command" <-- This is the description that will be displayed on usage.
-}```
+}``
 
 ---
 

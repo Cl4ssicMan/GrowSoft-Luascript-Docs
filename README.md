@@ -1,6 +1,7 @@
 # Lua Scripting Documentation For GrowSoft.
 
 -By Gnome
+GrowSoft Creator: Sebia
 
 This documentation explains how to create and register custom commands, handle player dialogs, and manage interactions in your Lua scripting environment in GrowSoft.
 

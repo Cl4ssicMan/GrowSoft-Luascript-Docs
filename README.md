@@ -17,7 +17,8 @@ To create a custom command, define a command data table with the following field
 - `roleRequired`: The role required to use the command.
 - `description`: A description of the command.
 
-```Example:
+```lua
+Example:
 local buyCommandData = {
     command = "commandName", <-- This is the command that players will type in the game as in /commandName
     roleRequired = Roles.ROLE_NONE, <--- These roles are defined in the game's API as ROLE_NONE = 0, ROLE_VIP = 1, ROLE_SUPER_VIP = 2, ROLE_MODERATOR = 3, ROLE_ADMIN = 4, ROLE_COMMUNITY_MANAGER = 5, ROLE_CREATOR = 6, ROLE_GOD = 7, ROLE_DEVELOPER = 51
@@ -30,7 +31,8 @@ local buyCommandData = {
 ## 3. Registering a Command
 Register the command using `registerLuaCommand`.
 
-```Example:
+```lua
+Example:
 registerLuaCommand(commandnameCommandData) <-- This is the command data table that you defined in the previous step.
 ```
 
@@ -39,7 +41,8 @@ registerLuaCommand(commandnameCommandData) <-- This is the command data table th
 ## 4. Handling Player Commands
 Use `onPlayerCommandCallback` to handle player commands.
 
-```Example:
+```lua
+Example:
 onPlayerCommandCallback(function(world, player, fullCommand) <-- This is the function that will be called when the command is used.
     local command, message = fullCommand:match("^(%S+)%s*(.*)") <-- This is used to extract the command and message from the full command.
     if command == buyCommandData.command then <-- This checks if the command matches the registered command.
@@ -55,7 +58,8 @@ end)
 ## 5. Handling Player Dialogs
 Use `onPlayerDialogCallback` to handle player interactions with dialogs.
 
-```Example:
+```lua
+Example:
 onPlayerDialogCallback(function(world, player, data) <-- This is the function that will be called when a dialog is called.
     if data["dialog_name"] == "buy" then <-- This checks if the dialog name matches the expected dialog.
         if not data["buttonClicked"] then return true end <-- This checks if a button was clicked in the dialog.
@@ -73,7 +77,7 @@ Note: The data to get the dialog name and button clicked, is always data["dialog
 ---
 
 ## PlayerConsumeableCallback
-```
+```lua
 onPlayerConsumableCallback(function(world, player, tile, clickedPlayer, itemID) <-- THIS IS AN EXAMPLE THAT IS ALREADY IN YOUR LUASCRIPTS!
     if itemID == getEnumItem("ITEM_GREEN_BEER"):getID() then
         if not clickedPlayer then
@@ -95,7 +99,7 @@ end)
 ---
 
 ## onTileWrenchCallback
-```
+```lua
 onTileWrenchCallback(function(world, player, tile) <-- THIS IS AN EXAMPLE THAT IS ALREADY IN YOUR LUASCRIPTS!
     if tile:getTileID() == 4358 then -- Sales-Man Standee
         local itemObj = getItem(4358)
@@ -108,7 +112,7 @@ end)
 ---
 
 ## onPlayerLoginCallback
-```
+```lua
 onPlayerLoginCallback(function(player) <-- THIS IS AN EXAMPLE THAT IS ALREADY IN YOUR LUASCRIPTS!
     player:onConsoleMessage("`9Welcome back to GrowSoft! We're glad to have you!``")
 end)
@@ -201,7 +205,7 @@ The `onDialogRequest` function uses a custom string syntax to define the layout 
 ---
 
 
-### <span style="color:red;">IMPORTANT!</span>
+### 🚨 IMPORTANT! 🚨
 arg1 and arg2's are usually either 0 or 1! BUT NOW ALWAYS WHEN LOOKING AT THE DOCS BELOW!!
 
 
@@ -215,7 +219,7 @@ getItem():getNetID() -- Returns the item's net ID.
 getItem():getName() -- Returns the item's name.
 ```
 ###Examples:
-
+```lua
 getItem(itemID):setPrice(price) <-- The itemID is the ID of the item and the price is the price of the item.
 getItem(itemID):isObtainable() <-- See if the item is obtainable.
 getItem(itemID):getNetID() <-- Get the item's net ID.
@@ -225,13 +229,13 @@ getItem(itemID):getName():lower():find("type", arg1, true/false) <-- Find the it
 getItemsCount() -- Returns the items count.
 getItemAmount(itemID) -- Returns the item amount.
 itemCount() -- Returns the item count.
-
+```
 ---
 
 8. Player Data Structure:
 
 Getting the player data, usually is used within a function.
-
+```lua
 getPlayerByName(name) -- Returns the player data table by name.
 player:getGems() -- Returns the player's gems count.
 player:removeGems(amount, arg1, arg2) -- Removes gems from the player.
@@ -268,14 +272,14 @@ player:resetDialogColor() -- Resets the dialog's color IMPORTANT! IF USING THE A
 PlayerStats.ConsumablesUsed -- Returns the player's consumables used.
 getAutofarm() -- Returns the player's autofarm.
 setSlots(slotAmount) -- Sets the player's slots.
-
+```
 
 
 
 ---
 
 9. Server Data Structure:
-
+```lua
 getRequiredEvent() -- Returns the required event.
 isVoucher() -- Returns if the item is a voucher.
 getCurrentServerDailyEvent() -- Returns the current server's daily event.
@@ -322,9 +326,9 @@ data["selection"] -- Returns the selection.
 data["item"] -- Returns the item.
 data["buttonClicked"] -- Returns the button clicked.
 data["dialog_name"] -- Returns the dialog name.
-
+```
 Examples:
-
+```lua
 local greenBeerModData = { <---- THIS EXAMPLE IS ALREADY IN YOUR LUASCRIPTS IN YOUR SERVER!
     modID = -1100, -- Ensure it's unique and negative
     modName = "Envious",
@@ -343,12 +347,12 @@ local greenBeerModData = { <---- THIS EXAMPLE IS ALREADY IN YOUR LUASCRIPTS IN Y
 }
 
 registerLuaPlaymod(greenBeerModData) <-- This is the playmod data table that you defined in the previous step.
-
+```
 
 ---
 
 ## 10. World Data Structure:
-
+```lua
 getOwner() -- Returns the world's owner.
 getName() -- Returns the world's Owner's name.
 getWorldName() -- Returns the world's name.
@@ -357,5 +361,5 @@ useItemEffect(player:getNetID(), itemID, replacethis:getNetID(), arg1) -- Uses t
 updateClothing(player) -- Updates the player's clothing.
 spawnGems(x, y, amount) -- Spawns gems.
 useItemEffect(player:getNetID(), itemID, arg1, replacethis)
-
-Happy Coding! -Gnome
+```
+##Happy Coding! -Gnome

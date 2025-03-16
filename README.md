@@ -206,7 +206,7 @@ The `onDialogRequest` function uses a custom string syntax to define the layout 
 
 
 ### 🚨 IMPORTANT! 🚨
-arg1 and arg2's are usually either 0 or 1! BUT NOW ALWAYS WHEN LOOKING AT THE DOCS BELOW!!
+arg1 and arg2's are usually either 0 or 1! BUT NOT ALWAYS WHEN LOOKING AT THE DOCS BELOW!!
 
 
 
@@ -218,7 +218,7 @@ getItem():isObtainable() -- Returns if the item is obtainable.
 getItem():getNetID() -- Returns the item's net ID.
 getItem():getName() -- Returns the item's name.
 ```
-###Examples:
+Examples:
 ```lua
 getItem(itemID):setPrice(price) <-- The itemID is the ID of the item and the price is the price of the item.
 getItem(itemID):isObtainable() <-- See if the item is obtainable.
@@ -362,4 +362,6 @@ updateClothing(player) -- Updates the player's clothing.
 spawnGems(x, y, amount) -- Spawns gems.
 useItemEffect(player:getNetID(), itemID, arg1, replacethis)
 ```
-##Happy Coding! -Gnome
+
+
+Happy Coding! -Gnome

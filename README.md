@@ -30,15 +30,16 @@ local buyCommandData = {
 ## 3. Registering a Command
 Register the command using `registerLuaCommand`.
 
-Example:
+```Example:
 registerLuaCommand(commandnameCommandData) <-- This is the command data table that you defined in the previous step.
+```
 
 ---
 
 ## 4. Handling Player Commands
 Use `onPlayerCommandCallback` to handle player commands.
 
-Example:
+```Example:
 onPlayerCommandCallback(function(world, player, fullCommand) <-- This is the function that will be called when the command is used.
     local command, message = fullCommand:match("^(%S+)%s*(.*)") <-- This is used to extract the command and message from the full command.
     if command == buyCommandData.command then <-- This checks if the command matches the registered command.
@@ -47,13 +48,14 @@ onPlayerCommandCallback(function(world, player, fullCommand) <-- This is the fun
     end
     return false
 end)
+```
 
 ---
 
 ## 5. Handling Player Dialogs
 Use `onPlayerDialogCallback` to handle player interactions with dialogs.
 
-Example:
+```Example:
 onPlayerDialogCallback(function(world, player, data) <-- This is the function that will be called when a dialog is called.
     if data["dialog_name"] == "buy" then <-- This checks if the dialog name matches the expected dialog.
         if not data["buttonClicked"] then return true end <-- This checks if a button was clicked in the dialog.
@@ -64,20 +66,20 @@ onPlayerDialogCallback(function(world, player, data) <-- This is the function th
     end
     return false
 end)
+```
 
 Note: The data to get the dialog name and button clicked, is always data["dialog_name"] and data["buttonClicked"] respectively, nothing else, it's a built in function.
 
 ---
 
 ## PlayerConsumeableCallback
-
+```
 onPlayerConsumableCallback(function(world, player, tile, clickedPlayer, itemID) <-- THIS IS AN EXAMPLE THAT IS ALREADY IN YOUR LUASCRIPTS!
     if itemID == getEnumItem("ITEM_GREEN_BEER"):getID() then
         if not clickedPlayer then
             player:onTalkBubble(player:getNetID(), "`wMust be used on a person.``", 1)
             return true
         end
-
         if player:changeItem(itemID, -1, 0) then
             clickedPlayer:addMod(greenBeerModID, 10)
             world:useItemEffect(player:getNetID(), itemID, clickedPlayer:getNetID(), 0)
@@ -88,11 +90,12 @@ onPlayerConsumableCallback(function(world, player, tile, clickedPlayer, itemID) 
     end
     return false
 end)
+```
 
 ---
 
 ## onTileWrenchCallback
-
+```
 onTileWrenchCallback(function(world, player, tile) <-- THIS IS AN EXAMPLE THAT IS ALREADY IN YOUR LUASCRIPTS!
     if tile:getTileID() == 4358 then -- Sales-Man Standee
         local itemObj = getItem(4358)
@@ -101,15 +104,15 @@ onTileWrenchCallback(function(world, player, tile) <-- THIS IS AN EXAMPLE THAT I
     end
     return false
 end)
-
+```
 ---
 
 ## onPlayerLoginCallback
-
+```
 onPlayerLoginCallback(function(player) <-- THIS IS AN EXAMPLE THAT IS ALREADY IN YOUR LUASCRIPTS!
     player:onConsoleMessage("`9Welcome back to GrowSoft! We're glad to have you!``")
 end)
-
+```
 ---
 
 ## 6. onDialogRequest String Syntax

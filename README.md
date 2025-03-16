@@ -201,19 +201,19 @@ The `onDialogRequest` function uses a custom string syntax to define the layout 
 ---
 
 
-### IMPORTANT!
+### <span style="color:red;">IMPORTANT!</span>
 arg1 and arg2's are usually either 0 or 1! BUT NOW ALWAYS WHEN LOOKING AT THE DOCS BELOW!!
 
 
 
 ### 7. Item Data Structure:
-
+```lua
 getItem() -- Returns the item data table.
 getItem():setPrice() -- Sets the price of the item desired.
 getItem():isObtainable() -- Returns if the item is obtainable.
 getItem():getNetID() -- Returns the item's net ID.
 getItem():getName() -- Returns the item's name.
-
+```
 ###Examples:
 
 getItem(itemID):setPrice(price) <-- The itemID is the ID of the item and the price is the price of the item.

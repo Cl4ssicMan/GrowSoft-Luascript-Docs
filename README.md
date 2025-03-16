@@ -129,6 +129,7 @@ The `onDialogRequest` function uses a custom string syntax to define the layout 
 - `set_bg_color|r,g,b,a|`: Sets the background color of the dialog.
 - `set_custom_spacing|x:value;y:value|`: Adds custom spacing between elements.
 - `add_custom_break|`: Adds a line break.
+- `start_custom_tabs|`: Starts custom tabs.
 - `end_custom_tabs|`: Ends custom tabs.
 
 ### UI Elements:

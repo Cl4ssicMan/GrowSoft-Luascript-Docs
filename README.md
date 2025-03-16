@@ -314,7 +314,7 @@ getStoreItems() -- Returns the store items.
 getEnumItem("ITEM_[NAME]") -- Returns the item by enum name.
 getID() -- Returns the ID.
 registerLuaPlaymod(PLAYMODDATA) -- Registers the Lua playmod.
-addMod(MODIF, amount) -- Adds a mod.
+addMod(MODID, amount) -- Adds a mod.
 reloadScripts() -- Reloads the Lua scripts.
 getTileID() -- Returns the tile ID.
 tile:getPosX() -- Returns the tile's position X.

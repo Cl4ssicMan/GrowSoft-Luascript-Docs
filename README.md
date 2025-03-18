@@ -125,6 +125,7 @@ end)
 The `onDialogRequest` function uses a custom string syntax to define the layout and content of dialogs. Below is a comprehensive list of available commands and their usage:
 
 ### Basic Commands:
+- `set_default_color|Color`: Sets the default dialog text color.
 - `set_border_color|r,g,b,a|`: Sets the border color of the dialog.
 - `set_bg_color|r,g,b,a|`: Sets the background color of the dialog.
 - `set_custom_spacing|x:value;y:value|`: Adds custom spacing between elements.

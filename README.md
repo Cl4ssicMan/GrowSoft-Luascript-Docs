@@ -276,6 +276,35 @@ player:setNextDialogRGBA(255, 255, 255, 255) -- Change color of the dialog's bac
 player:setNextDialogBorderRGBA(255, 255, 255, 255) -- Change color of the dialog's border
 player:resetDialogColor() -- Resets the dialog's color IMPORTANT! IF USING THE ABOVE TWO FUNCTIONS, USE THIS AFTER!
 player:getSubscription(subscription) -- Returns the player's specified subscription status.
+player:getHomeWorldID() - -Returns Player's Home World ID
+player:getOnlineStatus() -- Returns The Online Status
+player:getGuildID() -- Returns the Guild ID
+player:getTransformProfileButtons() - Returns Player's TransformProfile Buttons
+player:getDiscordID() -- Returns the Player's Discord ID
+player:getAccountCreationDateStr() -- Returns the Account Creation Date
+player:getClassicProfileContent(cat, flags) -- Returns the ClassicProfile Content
+player:onTradeScanUI() -- Returns Player's Trade Scans
+player:onGrow4GoodUI() -- Returns the Grow4Good UI
+player:onGuildNotebookUI() -- Returns The GuildNotebook UI
+Extras:
+player:onGrowmojiUI()
+player:onGrowpassUI()
+player:onNotebookUI()
+player:onBillboardUI()
+player:onPersonalizeWrenchUI()
+player:onOnlineStatusUI()
+player:onFavItemsUI()
+player:onCoinsBankUI()
+player:onUnlinkDiscordUI()
+player:onLinkDiscordUI()
+player:onClothesUI(player) -- player is the Target player (whos content will be shown) (not required)
+player:onAchievementsUI(player) -- player is the Target player (whos content will be shown) (not required)
+player:onTitlesUI(player) -- player is the Target player (whos content will be shown) (not required)
+player:onWrenchIconsUI(player) -- player is the Target player (whos content will be shown) (not required)
+player:onNameIconsUI(player) -- player is the Target player (whos content will be shown) (not required)
+player:onVouchersUI()
+player:onMentorshipUI()
+player:onBackpackUI(player) -- player is the Target player (whos content will be shown) (not required)
 PlayerStats.ConsumablesUsed -- Returns the player's consumables used.
 getAutofarm() -- Returns the player's autofarm.
 setSlots(slotAmount) -- Sets the player's slots.
@@ -328,6 +357,7 @@ loadDataFromServer(data) -- Loads data from the server.
 loadData() -- Loads data.
 saveDataToServer(data, data2)
 onAutoSaveRequest(function()) -- Fires the auto save request.
+getExpireTime() - Returns the Expire Time
 
 data["selection"] -- Returns the selection.
 data["item"] -- Returns the item.
@@ -368,6 +398,9 @@ useItemEffect(player:getNetID(), itemID, replacethis:getNetID(), arg1) -- Uses t
 updateClothing(player) -- Updates the player's clothing.
 spawnGems(x, y, amount) -- Spawns gems.
 useItemEffect(player:getNetID(), itemID, arg1, replacethis)
+world:getVisiblePlayersCount()
+world:isGameActive() - Returns if Game is Active
+world:onGameWinHighestScore() - Returns The Game's Highest Win Score
 ```
 
 

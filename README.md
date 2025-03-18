@@ -139,7 +139,7 @@ The `onDialogRequest` function uses a custom string syntax to define the layout 
 - `add_checkbox|name|message|checked|`: Adds a checkbox.
 - `add_friend_image_label_button|name|label|texture_path|size|texture_x|texture_y|`: Adds a button with a friend image.
 - `add_smalltext|message|`: Adds small text.
-- `add_button_with_icon|name|label|flags|iconID|hoverNumber|`: Adds a button with an icon.
+- `add_button_with_icon|big/small|label|flags|iconID|hoverNumber|`: Adds a button with an icon.
 - `add_label_with_icon|size|message|alignment|iconID|`: Adds a label with an icon.
 - `add_text_input|name|message|defaultInput|length|`: Adds a text input field.
 - `add_spacer|size|`: Adds a spacer.

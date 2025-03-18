@@ -171,6 +171,8 @@ The `onDialogRequest` function uses a custom string syntax to define the layout 
   - Example: `add_button_with_icon|btn1|112|`
 - `add_label|size|message|alignment|`: Adds a label with specified size and message.
   - Example: `add_label|big|Welcome|left|`
+- `add_button_with_icon|name|text|staticBlueFrame[is_count_label][no_padding_x]|itemID|left|` : Adds a static frame button.
+  - Example: `add_button_with_icon|hello|Hello There|staticBlueFrame|242|left|`
 - `add_small_font_button|name|button|noflags|0|0|`: Adds a small font button.
   - Example: `add_small_font_button|btn1|Click Me|noflags|0|0|`
 - `add_button|name|button|noflags|0|0|`: Adds a button.

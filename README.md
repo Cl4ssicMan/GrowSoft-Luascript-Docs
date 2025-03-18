@@ -275,6 +275,7 @@ player:addMod(playModID, number) -- Adds a mod to the player.
 player:setNextDialogRGBA(255, 255, 255, 255) -- Change color of the dialog's background
 player:setNextDialogBorderRGBA(255, 255, 255, 255) -- Change color of the dialog's border
 player:resetDialogColor() -- Resets the dialog's color IMPORTANT! IF USING THE ABOVE TWO FUNCTIONS, USE THIS AFTER!
+player:getSubscription(subscription) -- Returns the player's specified subscription status.
 PlayerStats.ConsumablesUsed -- Returns the player's consumables used.
 getAutofarm() -- Returns the player's autofarm.
 setSlots(slotAmount) -- Sets the player's slots.

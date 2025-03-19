@@ -305,6 +305,7 @@ player:onNameIconsUI(player) -- player is the Target player (whos content will b
 player:onVouchersUI()
 player:onMentorshipUI()
 player:onBackpackUI(player) -- player is the Target player (whos content will be shown) (not required)
+player:getClothingItemID()
 PlayerStats.ConsumablesUsed -- Returns the player's consumables used.
 getAutofarm() -- Returns the player's autofarm.
 setSlots(slotAmount) -- Sets the player's slots.

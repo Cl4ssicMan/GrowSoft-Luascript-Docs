@@ -8,12 +8,7 @@ This documentation explains how to create and register custom commands, handle p
 
 ---
 
-## 1. Introduction to Custom Commands
-Custom commands allow players to interact with your Lua scripts by typing specific commands in the game or application.
-
----
-
-## 2. Command Data Structure
+## Command Data Structure
 To create a custom command, define a command data table with the following fields:
 - `command`: The name of the command.
 - `roleRequired`: The role required to use the command.
@@ -30,7 +25,7 @@ local nameCommandData = {
 
 ---
 
-## 3. Registering a Command
+## Registering a Command
 Register the command using `registerLuaCommand`.
 
 ```lua
@@ -40,7 +35,7 @@ registerLuaCommand(commandnameCommandData) <-- This is the command data table th
 
 ---
 
-## 4. Handling Player Commands
+## Handling Player Commands
 Use `onPlayerCommandCallback` to handle player commands.
 
 ```lua
@@ -57,7 +52,7 @@ end)
 
 ---
 
-## 5. Handling Player Dialogs
+## Handling Player Dialogs
 Use `onPlayerDialogCallback` to handle player interactions with dialogs.
 
 ```lua
@@ -150,7 +145,7 @@ end)
 ```
 ---
 
-## 6. onDialogRequest String Syntax
+## onDialogRequest String Syntax
 The `onDialogRequest` function uses a custom string syntax to define the layout and content of dialogs. Below is a comprehensive list of available commands and their usage:
 
 ### Basic Commands:
@@ -245,7 +240,7 @@ arg1 and arg2's are usually either 0 or 1! BUT NOT ALWAYS WHEN LOOKING AT THE DO
 
 
 
-### 7. Item Data Structure:
+### Item Data Structure:
 ```lua
 getItem() -- Returns the item data table.
 getItem():setPrice() -- Sets the price of the item desired.
@@ -267,11 +262,10 @@ itemCount() -- Returns the item count.
 ```
 ---
 
-8. Player Data Structure:
+## Player Data Structure:
 
 Getting the player data, usually is used within a function.
 ```lua
-getPlayerByName(name) -- Returns the player data table by name.
 player:getGems() -- Returns the player's gems count.
 player:removeGems(amount, arg1, arg2) -- Removes gems from the player.
 player:addGems(amount, arg1, arg2) -- Adds gems to the player.
@@ -348,6 +342,7 @@ player:sendVariant({“OnConsoleMessage”, “Hello”})
 player:sendVariant({“OnConsoleMessage”, “Hello”}, delay, netid)
 ***
 PlayerStats.ConsumablesUsed -- Returns the player's consumables used.
+getPlayerByName(name) -- Returns the player data table by name.
 getAutofarm() -- Returns the player's autofarm.
 setSlots(slotAmount) -- Sets the player's slots.
 ```
@@ -356,7 +351,7 @@ setSlots(slotAmount) -- Sets the player's slots.
 
 ---
 
-9. Server Data Structure:
+## Server Data Structure:
 ```lua
 getRequiredEvent() -- Returns the required event.
 isVoucher() -- Returns if the item is a voucher.
@@ -430,7 +425,7 @@ registerLuaPlaymod(greenBeerModData) <-- This is the playmod data table that you
 
 ---
 
-## 10. World Data Structure:
+## World Data Structure:
 ```lua
 getOwner() -- Returns the world's owner.
 getName() -- Returns the world's Owner's name.

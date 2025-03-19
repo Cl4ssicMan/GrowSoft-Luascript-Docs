@@ -179,6 +179,8 @@ The `onDialogRequest` function uses a custom string syntax to define the layout 
 - `add_big_banner|imagePath|x|y|text|`: Adds a big banner with text.
 
 ### Additional Commands:
+- `add_searchable_item_list|data|listType:iconGrid;resultLimit:[amount]|searchFixedName|`: Adds a Searchable Item List.
+  - Example: `add_searchable_item_list|data|listType:iconGrid;resultLimit:12|searchFixedName|`
 - `add_dual_layer_icon_label|size|message|alignment|iconID|background|foreground|size|toggle|`: Adds a dual-layer icon label.
   - Example: `add_dual_layer_icon_label|big|Welcome|left|6016|background|foreground|32|1|`
 - `add_seed_color_icons|itemId|`: Adds seed color icons for a specific item.

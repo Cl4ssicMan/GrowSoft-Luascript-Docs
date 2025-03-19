@@ -119,6 +119,35 @@ onPlayerLoginCallback(function(player) <-- THIS IS AN EXAMPLE THAT IS ALREADY IN
     player:onConsoleMessage("`9Welcome back to GrowSoft! We're glad to have you!``")
 end)
 ```
+
+---
+
+## onTilePlaceCallback
+```lua
+onTilePlaceCallback(function(world, player, tile, placingID)
+    if placingID == 2 then -- Dirt
+        return true -- Block will not be placed at all
+    end
+    return false
+end)
+```
+
+---
+
+## onPlayerTick
+```lua
+onPlayerTick(function(player) -- Gets called every 1000ms for each player
+    print(player:getName())
+end)
+```
+---
+
+## onWorldTick
+```lua
+onWorldTick(function(world) -- Gets called every 100ms for each world
+    print(world:getName())
+end)
+```
 ---
 
 ## 6. onDialogRequest String Syntax
@@ -309,6 +338,15 @@ player:getClothingItemID()
 player:getUnlockedAchievementsCount()
 player:getAchievementsCount()
 player:getBackpackUsedSize()
+player:getCountry() - returns player’s country letter (string), works only for online player’s
+player:getPlatform() - returns player’s platform ID (string), works only for online player’s
+***
+player:sendVariant() - send any type of variant packet, examples:
+
+player:sendVariant({"OnTalkBubble", player:getNetID(), “Hello”, 0, 0})
+player:sendVariant({“OnConsoleMessage”, “Hello”})
+player:sendVariant({“OnConsoleMessage”, “Hello”}, delay, netid)
+***
 PlayerStats.ConsumablesUsed -- Returns the player's consumables used.
 getAutofarm() -- Returns the player's autofarm.
 setSlots(slotAmount) -- Sets the player's slots.

@@ -397,6 +397,14 @@ loadData() -- Loads data.
 saveDataToServer(data, data2)
 onAutoSaveRequest(function()) -- Fires the auto save request.
 getExpireTime() - Returns the Expire Time
+getServerName() -- returns the server name
+getNewsBanner() -- returns the news banner
+getNewsBannerDimensions() -- returns the news banner dimensions
+getTodaysDate() -- returns the Date
+getTodaysEvents() -- returns the Event of that day
+getCurrentEventDescription() -- returns the current event's description
+getCurrentDailyEventDescription() -- returns the current daily event's description
+getCurrentRoleDayDescription() -- returns the current role day's description
 
 data["selection"] -- Returns the selection.
 data["item"] -- Returns the item.

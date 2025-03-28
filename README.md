@@ -448,6 +448,8 @@ useItemEffect(player:getNetID(), itemID, arg1, replacethis)
 world:getVisiblePlayersCount()
 world:isGameActive() - Returns if Game is Active
 world:onGameWinHighestScore() - Returns The Game's Highest Win Score
+world:onCreateChatBubble(x, y, text, netid)
+world:onCreateExplosion(x, y, radius, power)
 ```
 
 

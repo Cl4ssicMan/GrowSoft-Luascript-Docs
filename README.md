@@ -156,6 +156,7 @@ The `onDialogRequest` function uses a custom string syntax to define the layout 
 - `add_custom_break|`: Adds a line break.
 - `start_custom_tabs|`: Starts custom tabs.
 - `end_custom_tabs|`: Ends custom tabs.
+- `disable_resize|`: Disables automatic dialog resize
 
 ### UI Elements:
 - `add_item_picker|name|message|placeholder|`: Adds an item picker.

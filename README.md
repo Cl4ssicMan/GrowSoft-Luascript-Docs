@@ -345,6 +345,7 @@ player:sendVariant({"OnTalkBubble", player:getNetID(), “Hello”, 0, 0})
 player:sendVariant({“OnConsoleMessage”, “Hello”})
 player:sendVariant({“OnConsoleMessage”, “Hello”}, delay, netid)
 ***
+player:getClothingItemID(PlayerClothes.CHANGETHIS)
 PlayerStats.ConsumablesUsed -- Returns the player's consumables used.
 getPlayerByName(name) -- Returns the player data table by name.
 getAutofarm() -- Returns the player's autofarm.

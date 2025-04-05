@@ -143,6 +143,19 @@ onWorldTick(function(world) -- Gets called every 100ms for each world
     print(world:getName())
 end)
 ```
+
+---
+## onPlayerFirstTimeLoginCallback
+
+```lua
+onPlayerFirstTimeLoginCallback(function(player)
+    if not player:changeItem(242, 100, 0) then
+        player:changeItem(242, 100, 1)
+    end
+    player:onConsoleMessage("hi")
+end)
+```
+
 ---
 
 ## onDialogRequest String Syntax

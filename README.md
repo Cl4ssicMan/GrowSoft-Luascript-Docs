@@ -475,6 +475,7 @@ getTile(x, y)
 ---
 
 ## Tile Structure
+```lua
 getTileForeground()
 getTileBackground()
 setTileForeground(tile, id, 0, avatar) (maybe wants world:)
@@ -487,6 +488,7 @@ Avatar is optional here, if you specify it then the tile will visually update on
 **
 getTiles() - array of all tiles
 getTilesByActionType(actiontype)
+```
 
 
 

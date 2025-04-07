@@ -264,6 +264,7 @@ getItem():setPrice() -- Sets the price of the item desired.
 getItem():isObtainable() -- Returns if the item is obtainable.
 getItem():getNetID() -- Returns the item's net ID.
 getItem():getName() -- Returns the item's name.
+getActionType() (can be used to check the type of item, for example if its clothing or seed or magplant, fish… basically anything)
 ```
 Examples:
 ```lua
@@ -466,7 +467,27 @@ world:isGameActive() - Returns if Game is Active
 world:onGameWinHighestScore() - Returns The Game's Highest Win Score
 world:onCreateChatBubble(x, y, text, netid)
 world:onCreateExplosion(x, y, radius, power)
+getWorldSizeX() --Get the world size horizontally
+getWorldSizeY() --Get the world size vertically
+getTile(x, y)
 ```
+
+---
+
+## Tile Structure
+getTileForeground()
+getTileBackground()
+setTileForeground(tile, id, 0, avatar) (maybe wants world:)
+setTileBackground(tile, id, 0, avatar) (..)
+**
+Info About above:
+
+The parameter boolean (optional, default 0) (number 0 or 1), if its 1 then the tile IS NOT placed in the world, only placed to players visually until they re-enter the world.
+Avatar is optional here, if you specify it then the tile will visually update only for that person, otherwise for everyone
+**
+getTiles() - array of all tiles
+getTilesByActionType(actiontype)
+
 
 
 Happy Coding! -Gnome

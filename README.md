@@ -157,6 +157,14 @@ end)
 ```
 
 ---
+## onPlayerEnterWorldCallback
+```lua
+onPlayerEnterWorldCallback(function(world, player)
+
+end)
+```
+
+---
 
 ## onDialogRequest String Syntax
 The `onDialogRequest` function uses a custom string syntax to define the layout and content of dialogs. Below is a comprehensive list of available commands and their usage:

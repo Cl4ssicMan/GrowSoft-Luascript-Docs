@@ -368,6 +368,17 @@ player:sendVariant({“OnConsoleMessage”, “Hello”})
 player:sendVariant({“OnConsoleMessage”, “Hello”}, delay, netid)
 ***
 player:getClothingItemID(PlayerClothes.CHANGETHIS)
+***
+player:getInventoryItems()
+
+Example:
+    local inventory_items = player:getInventoryItems()
+    for i = 1, #inventory_items do
+        local inventory_item = inventory_items[i]
+        print(inventory_item:getItemID())
+        print(inventory_item:getItemCount())
+    end
+***
 PlayerStats.ConsumablesUsed -- Returns the player's consumables used.
 getPlayerByName(name) -- Returns the player data table by name.
 getAutofarm() -- Returns the player's autofarm.
@@ -496,6 +507,12 @@ Avatar is optional here, if you specify it then the tile will visually update on
 **
 getTiles() - array of all tiles
 getTilesByActionType(actiontype)
+```
+---
+## Inventory Class
+```lua
+inventory_item:getItemID()
+inventory_item:getItemCount()
 ```
 
 ---

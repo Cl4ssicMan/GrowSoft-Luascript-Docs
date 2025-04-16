@@ -165,6 +165,15 @@ end)
 ```
 
 ---
+## onPlayerPunchCallback
+```lua
+onTilePunchCallback(function(world, avatar, tile)
+    print(tile:getTileID())
+    return false -- false does not prevent default action of player breaking tiles, true does (making player unable to break tiles)
+end)
+```
+
+---
 
 ## onDialogRequest String Syntax
 The `onDialogRequest` function uses a custom string syntax to define the layout and content of dialogs. Below is a comprehensive list of available commands and their usage:
@@ -479,7 +488,7 @@ getWorldName() -- Returns the world's name.
 enterWorld(WorldName, "Message") -- Enters the specified world.
 useItemEffect(player:getNetID(), itemID, replacethis:getNetID(), arg1) -- Uses the item effect.
 updateClothing(player) -- Updates the player's clothing.
-spawnGems(x, y, amount) -- Spawns gems.
+spawnGems(x, y, amount, player) -- Spawns gems.
 useItemEffect(player:getNetID(), itemID, arg1, replacethis)
 world:getVisiblePlayersCount()
 world:isGameActive() - Returns if Game is Active

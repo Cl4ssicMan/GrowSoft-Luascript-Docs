@@ -165,7 +165,7 @@ end)
 ```
 
 ---
-## onPlayerPunchCallback
+## onTilePunchCallback
 ```lua
 onTilePunchCallback(function(world, avatar, tile)
     print(tile:getTileID())

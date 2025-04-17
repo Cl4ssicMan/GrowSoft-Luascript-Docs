@@ -495,6 +495,7 @@ world:isGameActive() - Returns if Game is Active
 world:onGameWinHighestScore() - Returns The Game's Highest Win Score
 world:onCreateChatBubble(x, y, text, netid)
 world:onCreateExplosion(x, y, radius, power)
+world:addXP(player, amount)
 getWorldSizeX() --Get the world size horizontally
 getWorldSizeY() --Get the world size vertically
 getTile(x, y)

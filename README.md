@@ -160,7 +160,7 @@ end)
 ## onPlayerEnterWorldCallback
 ```lua
 onPlayerEnterWorldCallback(function(world, player)
-
+    print("Player entered world")
 end)
 ```
 
@@ -170,6 +170,15 @@ end)
 onTilePunchCallback(function(world, avatar, tile)
     print(tile:getTileID())
     return false -- false does not prevent default action of player breaking tiles, true does (making player unable to break tiles)
+end)
+```
+
+---
+
+## onPlayerDisconnectCallback
+```lua
+onPlayerDisconnectCallback(function(player)
+    print("Player has disconnected")
 end)
 ```
 
@@ -379,6 +388,8 @@ player:sendVariant({“OnConsoleMessage”, “Hello”}, delay, netid)
 player:getClothingItemID(PlayerClothes.CHANGETHIS)
 ***
 player:getInventoryItems()
+player:sendAction("action|play_sfx\nfile|audio/blabla.mp3\ndelayMS|0") -- This is Growtopia default format
+--There are many other actions as well that Growtopia uses.
 
 Example:
     local inventory_items = player:getInventoryItems()
@@ -450,6 +461,10 @@ getTodaysEvents() -- returns the Event of that day
 getCurrentEventDescription() -- returns the current event's description
 getCurrentDailyEventDescription() -- returns the current daily event's description
 getCurrentRoleDayDescription() -- returns the current role day's description
+addWorldMenuWorld(worldID, displayName, color, priority) -- priority is either 0 or 1. 0 meaning its whown after special worlds like locke, growmines, etc. If its 1 then before them.
+--If that addworldmenuworld is called for the same world again, it will replace the older one to reduce issues
+removeWorldMenuWorld(worldID)
+hideWorldMenuDefaultSpecialWorlds(0/1) -- 1 meaning yes and 0 meaning no
 
 data["selection"] -- Returns the selection.
 data["item"] -- Returns the item.

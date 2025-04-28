@@ -163,6 +163,13 @@ onPlayerEnterWorldCallback(function(world, player)
     print("Player entered world")
 end)
 ```
+---
+## onPlayerLeaveWorldCallback
+```lua
+onPlayerLeaveWorldCallback(function(world, player)
+    print(world:getName())
+end)
+```
 
 ---
 ## onTilePunchCallback
@@ -183,6 +190,18 @@ end)
 ```
 
 ---
+
+# Functions
+
+---
+Added a way to add buttons in social portal, its made as a callable function to make better support for multiple scripts that add the buttons
+```lua
+function mySocialPortalButton(world, player)
+    print(player:getName())
+end
+
+addSocialPortalButton("add_custom_button|button_name_2|image:interface/large/gui_social_c_settings.rttex;image_size:400,260;width:0.19;|\n", mySocialPortalButton)
+```
 
 ## onDialogRequest String Syntax
 The `onDialogRequest` function uses a custom string syntax to define the layout and content of dialogs. Below is a comprehensive list of available commands and their usage:
@@ -554,6 +573,21 @@ os.remove()
 os.rename()
 os.setlocale()
 os.exit()
+```
+
+# Extra Examples
+
+Added a way to get default item gem drops and xp, depending on how you want to use it there are two different ways:
+```lua
+local item = getItem(340) -- chandelier
+print(item:getGems()) -- shows random amount of gems chandelier would drop
+print(item:getXP()) -- shows amount of XP chandelier would give
+
+Second option, if you want to include player buffs to boost the gems or XP such as item effects etc...:
+
+local item = getItem(340) -- chandelier
+print(item:getGems(world, player))
+print(item:getXP(world, player))
 ```
 
 

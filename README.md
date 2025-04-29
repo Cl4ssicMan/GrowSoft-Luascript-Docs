@@ -419,6 +419,7 @@ Example:
         print(inventory_item:getItemCount())
     end
 ***
+player:getWorld() -- returns the current world, the player is in, and return nil if the player isnt in a world
 PlayerStats.ConsumablesUsed -- Returns the player's consumables used.
 getPlayerByName(name) -- Returns the player data table by name.
 getAutofarm() -- Returns the player's autofarm.
@@ -531,6 +532,7 @@ world:onGameWinHighestScore() - Returns The Game's Highest Win Score
 world:onCreateChatBubble(x, y, text, netid)
 world:onCreateExplosion(x, y, radius, power)
 world:addXP(player, amount)
+world:setPlayerPosition(player, x, y) -- teleport a player
 getWorldSizeX() --Get the world size horizontally
 getWorldSizeY() --Get the world size vertically
 getTile(x, y)

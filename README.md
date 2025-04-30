@@ -190,6 +190,78 @@ end)
 ```
 
 ---
+## onPlayerDeathCallBack
+```lua
+onPlayerDeathCallback(world, player, isRespawn)
+
+isRespawn is true if player respawns, if not true then the player dead from spikes or lava etc...
+```
+
+---
+## onPlayerDropCallback
+```lua
+onPlayerDropCallback(world, player, itemID, itemCount)
+
+need to return true or false, return true to make it unable to drop the item, return false if u want the drop to work as usual.
+```
+
+---
+## onPlayerLevelUPCallback
+```lua
+onPlayerLevelUPCallback(world, player, levelReached)
+```
+
+---
+## onPlayerEquipClothingCallback
+```lua
+onPlayerEquipClothingCallback(world, player, itemID)
+
+need to return true or false, return true to make it unable to equip the item, return false if u want the equip to work as usual.
+```
+
+---
+## onPlayerUnequipClothingCallback
+```lua
+onPlayerUnequipClothingCallback(world, player, itemID)
+
+need to return true or false, return true to make it unable to unequip the item, return false if u want the unequip to work as usual.
+```
+
+---
+## onPlayerPickupItemCallback
+```lua
+onPlayerPickupItemCallback(world, player, itemID, itemCount)
+
+need to return true or false, return true to make it unable to pickup the item, return false if u want the pickup to work as usual.
+```
+
+---
+## onPlayerEnterDoorCallback
+```lua
+onPlayerEnterDoorCallback(world, player, targetWorldName, doorID)
+
+need to return true or false, return true to make it unable to enter the door, return false if u want the enter door to work as usual.
+```
+
+---
+## onPlayerPlantCallback
+```lua
+onPlayerPlantCallback(world, player, tile)
+```
+
+---
+## onPlayerHarvestCallback
+```lua
+onPlayerHarvestCallback(world, player, tile)
+```
+
+---
+## onPlayerCatchFishCallback
+```lua
+onPlayerCatchFishCallback(world, player, itemID, itemCount)
+```
+
+---
 
 # Functions
 
@@ -420,6 +492,7 @@ Example:
     end
 ***
 player:getWorld() -- returns the current world, the player is in, and return nil if the player isnt in a world
+player:disconnect() -- Disconnects the player
 PlayerStats.ConsumablesUsed -- Returns the player's consumables used.
 getPlayerByName(name) -- Returns the player data table by name.
 getAutofarm() -- Returns the player's autofarm.
@@ -533,6 +606,8 @@ world:onCreateChatBubble(x, y, text, netid)
 world:onCreateExplosion(x, y, radius, power)
 world:addXP(player, amount)
 world:setPlayerPosition(player, x, y) -- teleport a player
+world:getDroppedItems() - returns list of all dropped items
+world:getTileDroppedItems(tile) - returns list of all dropped items in tile
 getWorldSizeX() --Get the world size horizontally
 getWorldSizeY() --Get the world size vertically
 getTile(x, y)
@@ -560,6 +635,17 @@ getTilesByActionType(actiontype)
 ```lua
 inventory_item:getItemID()
 inventory_item:getItemCount()
+```
+
+---
+## Drop Class
+```lua
+drop:getItemID()
+drop:getItemCount() 
+drop:getPosX()
+drop:getPosY()
+drop:getUID()
+drop:getFlags()
 ```
 
 ---

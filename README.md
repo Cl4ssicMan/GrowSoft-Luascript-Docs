@@ -469,7 +469,7 @@ player:getUnlockedAchievementsCount()
 player:getAchievementsCount()
 player:getBackpackUsedSize()
 player:getCountry() - returns player’s country letter (string), works only for online player’s
-player:getPlatform() - returns player’s platform ID (string), works only for online player’s
+player:getPlatform() - returns player’s platform ID (string), works only for online player’s 0,1,1 and 0 is windows. 4 is android. 1 is ios. 2 is macos
 ***
 player:sendVariant() - send any type of variant packet, examples:
 

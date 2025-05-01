@@ -7,6 +7,7 @@ getItem():getNetID() -- Returns the item's net ID.
 getItem():getName() -- Returns the item's name.
 getActionType() (can be used to check the type of item, for example if its clothing or seed or magplant, fish… basically anything)
 getItem(2):getRarity()
+item:getGrowTime()
 ```
 Examples:
 ```lua

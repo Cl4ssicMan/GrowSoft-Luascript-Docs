@@ -17,6 +17,8 @@ world:addXP(player, amount)
 world:setPlayerPosition(player, x, y) -- teleport a player
 world:getDroppedItems() - returns list of all dropped items
 world:getTileDroppedItems(tile) - returns list of all dropped items in tile
+world:removeDroppedItem(DropUID) -- Removes the dropped item
+world:getID() -- Returns The World's ID
 getWorldSizeX() --Get the world size horizontally
 getWorldSizeY() --Get the world size vertically
 getTile(x, y)

@@ -55,6 +55,7 @@ addWorldMenuWorld(worldID, displayName, color, priority) -- priority is either 0
 removeWorldMenuWorld(worldID)
 hideWorldMenuDefaultSpecialWorlds(0/1) -- 1 meaning yes and 0 meaning no
 getServerID() -- Returns server ID
+getServerPlayers() -- returns server players
 
 data["selection"] -- Returns the selection.
 data["item"] -- Returns the item.

@@ -54,6 +54,7 @@ addWorldMenuWorld(worldID, displayName, color, priority) -- priority is either 0
 --If that addworldmenuworld is called for the same world again, it will replace the older one to reduce issues
 removeWorldMenuWorld(worldID)
 hideWorldMenuDefaultSpecialWorlds(0/1) -- 1 meaning yes and 0 meaning no
+getServerID() -- Returns server ID
 
 data["selection"] -- Returns the selection.
 data["item"] -- Returns the item.

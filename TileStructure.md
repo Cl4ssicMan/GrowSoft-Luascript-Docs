@@ -12,5 +12,17 @@ Avatar is optional here, if you specify it then the tile will visually update on
 **
 getTiles() - array of all tiles
 getTilesByActionType(actiontype)
+
+TileDataProperties = {
+    TILE_DATA_TYPE_SEED_FRUITS_COUNT = 0
+};
+
+local tree_fruits = tile:getTileData(TileDataProperties.TILE_DATA_TYPE_SEED_FRUITS_COUNT) -- Get tile property
+
+print("Tree fruit count is: " .. tostring(tree_fruits))
+
+tile:setTileDataInt(TileDataProperties.TILE_DATA_TYPE_SEED_FRUITS_COUNT, 1) -- Change tile fruits to 1
+
+world:updateTile(tile) -- Update tile so it displays the new data in-game, otherwise will require re-entering world
 ```
 ---

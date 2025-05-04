@@ -262,6 +262,19 @@ onPlayerFirePutOutCallback(world, player, tile)
 ```
 
 ---
+## onPlayerEarnGrowtokenCallback
+```lua
+onPlayerEarnGrowtokenCallback(world, player, itemCount)
+```
+
+---
+## onPlayerTrainFishCallback
+```lua
+onPlayerTrainFishCallback(world, player)
+Called once the player has trained a fish
+```
+
+---
 ## onPlayerGemsObtainedCallback
 ```lua
 onPlayerGemsObtainedCallback(world, player, amount)
